@@ -1,0 +1,37 @@
+--- 
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Create a sample Ec2 Instance"
+Resources: 
+  JenkinsMaster: 
+    Properties: 
+      ImageId: ami-0a780d5bac870126a
+      InstanceType: t2.micro
+      SubnetId: subnet-04dc449d2591aa5b6
+      KeyName: "mykeypair1"
+      Tags: 
+        - 
+          Key: Purpose
+          Value: "CloudFormation Testing"
+    Type: "AWS::EC2::Instance"
+  StagingServer: 
+    Properties: 
+      ImageId: ami-0a780d5bac870126a
+      InstanceType: t2.micro
+      SubnetId: subnet-04dc449d2591aa5b6
+      KeyName: "mykeypair1"
+      Tags: 
+        - 
+          Key: Purpose
+          Value: "CloudFormation Testing"
+    Type: "AWS::EC2::Instance"
+  ProductionServer: 
+    Properties: 
+      ImageId: ami-0a780d5bac870126a
+      InstanceType: t2.micro
+      SubnetId: subnet-04dc449d2591aa5b6
+      KeyName: "mykeypair1"
+      Tags: 
+        - 
+          Key: Purpose
+          Value: "CloudFormation Testing"
+    Type: "AWS::EC2::Instance"
